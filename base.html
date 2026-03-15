@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Maze Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="menu">
+        <h1>MAZE ESCAPE</h1>
+        <p>난이도를 선택하세요</p>
+        <button onclick="startGame(1)">1. EASY (10x10)</button>
+        <button onclick="startGame(2)">2. NORMAL (18x18)</button>
+        <button onclick="startGame(3)">3. HARD (24x24)</button>
+    </div>
+
+    <div id="gameArea" class="hidden">
+        <canvas id="gameCanvas" width="600" height="600"></canvas>
+        <div id="info">방향키로 탈출하세요! | [M] 메인 메뉴</div>
+    </div>
+
+    <script src="game.js" defer></script>
+</body>
+</html>
