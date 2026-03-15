@@ -17,14 +17,14 @@ let isHintActive = false;
 
 function startGame(level) {
     if (level === 1) { mazeWidth = 10; mazeHeight = 10; hintsLeft = 2; }
-    else if (level === 2) { mazeWidth = 18; mazeHeight = 18; hintsLeft = 4; }
-    else if (level === 3) { mazeWidth = 24; mazeHeight = 24; hintsLeft = 6; }
+    else if (level === 2) { mazeWidth = 18; mazeHeight = 18; hintsLeft = 5; }
+    else if (level === 3) { mazeWidth = 24; mazeHeight = 24; hintsLeft = 10; }
 
     TILE_SIZE = 600 / (mazeWidth * 2 + 1);
-    generateMaze();
-
+    
     player = { x: 1, y: 1 };
     exit = { x: mazeWidth * 2 - 1, y: mazeHeight * 2 - 1 };
+    generateMaze();
 
     document.getElementById("menu").classList.add("hidden");
     document.getElementById("gameArea").classList.remove("hidden");
@@ -95,7 +95,6 @@ function generateMaze() {
             }
         }
     }
-    map[exit.y][exit.x] = PATH;
 }
 
 window.addEventListener("keydown", e => {
